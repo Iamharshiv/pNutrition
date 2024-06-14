@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Page 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <app-multichoice [questions]="step2Questions" (outputEvent)="handleIsUserAnsweredAll($event)"></app-multichoice>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="pad">
+    <ion-button slot="start" (click)="handlePrev()">Prev</ion-button>
+    <ion-button slot="end" (click)="handleNext()" [disabled]="!allAnswerSelected">Next</ion-button>
+  </ion-toolbar>
+
+</ion-footer>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Page 4</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="submitForm" class="form-container">
+
+    <ion-input name="name" type="text" fill="solid" label="Name" formControlName="name" required
+      labelPlacement="floating" errorText="Name is required"></ion-input>
+    <div *ngIf="submitForm.get('name')?.touched && submitForm.get('name')?.invalid">
+
+    </div>
+    <ion-input name="email" type="text" fill="solid" label="Email" formControlName="email" required
+      labelPlacement="floating" errorText="Invalid email"></ion-input>
+    <div *ngIf="submitForm.get('email')?.touched && submitForm.get('email')?.invalid">
+    </div>
+
+    <!-- <ion-button type="submit" id="open-toast"  expand="block">Submit</ion-button> -->
+  </form>
+  <!-- <ion-toast trigger="open-toast" message="Form has been submitted." [duration]="2000"></ion-toast> -->
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="pad">
+    <ion-button slot="start" (click)="handlePrev()">Prev</ion-button>
+
+    <ion-button slot="end" type=submit (click)="submit()" [disabled]="submitForm.invalid">Submit</ion-button>
+  </ion-toolbar>
+</ion-footer>
