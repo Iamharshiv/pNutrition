@@ -1,11 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'step1',
-    pathMatch: 'full',
-  },
   // {
   //   path: 'folder/:id',
   //   loadComponent: () =>
